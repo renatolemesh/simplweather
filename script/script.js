@@ -1,4 +1,5 @@
-const API_KEY = 'e63937237298849235ab5f63a0eb5974';
+const API_KEY = process.env.API_KEY;
+const AUT_KEY = process.env.AUT_KEY;
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/';
 
 const dataAtual = new Date();
@@ -128,7 +129,7 @@ function getRandomImage(condicaoAtual) {
 
     let Httpxml = new XMLHttpRequest();
     Httpxml.open('GET', url);
-    Httpxml.setRequestHeader('Authorization', 'p6N4RrFW2nQdsr4ev2xpw3RT2DGjPtympmx5Pnswcy2uoBr8zYrrx96l');
+    Httpxml.setRequestHeader('Authorization', AUT_KEY);
     Httpxml.onreadystatechange = () => {
         if (Httpxml.readyState === 4) {
             if (Httpxml.status === 200) {
