@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Temperatura</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 col-sm-12 col-xs-12">
+                <div class="input-group rounded-left"> <!-- Adiciona a classe 'rounded-pill' para deixar as bordas arredondadas -->
+                    <input type="text" class="form-control" id="cidade_input" placeholder="Pesquisar cidade..." value="São Paulo"> <!-- Adiciona a classe 'rounded-pill' para deixar a borda esquerda redonda e 'rounded-right-0' para remover a borda direita do input -->
+                    <div class="input-group-append">
+                        <button class="btn btn-primary rounded-left" type="button" onclick="pesquisarCidade()">Pesquisar</button> <!-- Adiciona a classe 'rounded-pill' para deixar a borda direita redonda e 'rounded-left-0' para remover a borda esquerda do botão -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 col-sm-12 col-xs-12"> 
+                   <div class="card p-4">    
+                    
+                       <div class="d-flex">
+                           <h6 id="cidade" class="flex-grow-1"></h6>
+                           <h6 id="hora"></h6>
+                       </div>
+                        
+                       <div class="d-flex flex-column temp mt-5 mb-3">
+                           <h1 id="tempAtual" class="mb-0 font-weight-bold" id="heading"> </h1>
+                           <span id="condicao" class="small grey"></span>
+                           <div class="img-fluid">
+                            <img id='img_condicao' src="" alt="">
+                           </div>
+                       </div>
+                       
+                       <div class="d-flex">
+                           <div class="temp-details flex-grow-1">
+                                <p class="my-1">
+                                    <img src="imagens/vento.png" height="25px" >
+            
+                                   <span id="vento">  </span>
+                                </p>
+
+                                <p class="my-1"> 
+                                    <img src="imagens/umidade.png" height="25px" >
+                                    <span id="umidade"> </span>
+                                </p>
+                           </div>
+                           
+                           <div class="temp-details ">
+                            
+                            <p class="my-1 leftmg d-flex">
+                                <img src="imagens/maxima.png" height="17px" >
+        
+                               <span id="maxima"></span>
+                            </p>
+
+                            <p class="my-1 leftmg"> 
+                                <img src="imagens/minima.png"height="17px" >
+                                <span id="minima"></span>
+                            </p>
+                       </div>
+                       </div>
+                        
+          
+                    </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
