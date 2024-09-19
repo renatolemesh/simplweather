@@ -93,7 +93,7 @@ function pesquisarCidade(cityName, lat, lon) {
 }
 
 function getTempByCity(cidade_final, lat, lon) {
-    let url = `${BASE_URL}onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`;
+    let url = `${BASE_URL}forecast?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`;
 
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open('GET', url);
