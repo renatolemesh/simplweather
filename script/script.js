@@ -1,5 +1,6 @@
-const API_KEY = 'bd5e378503939ddaee76f12ad7a97608';
+const API_KEY = '606c261b8daa79a398b7261c88db3317';
 const AUT_KEY = 'p6N4RrFW2nQdsr4ev2xpw3RT2DGjPtympmx5Pnswcy2uoBr8zYrrx96l';
+const BASE_URL_3 = 'https://api.openweathermap.org/data/3.0/';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/';
 
 const dataAtual = new Date();
@@ -93,13 +94,14 @@ function pesquisarCidade(cityName, lat, lon) {
 }
 
 function getTempByCity(cidade_final, lat, lon) {
-    let url = `${BASE_URL}forecast?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`;
+    let url = `${BASE_URL_3}onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`;
 
     let xmlHttp = new XMLHttpRequest();
     xmlHttp.open('GET', url);
     xmlHttp.onreadystatechange = () => {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             let dadosJSONObj = JSON.parse(xmlHttp.responseText);
+            console.log(dadosJSONObj)
             let condicaoAtual = dadosJSONObj.current.weather[0].description;
             let condicaoMain = dadosJSONObj.current.weather[0].main;
             let temperatura = parseInt(dadosJSONObj.current.temp) + "&deg; C";
